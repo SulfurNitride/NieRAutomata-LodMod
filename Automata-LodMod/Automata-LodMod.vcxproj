@@ -91,6 +91,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>third_party\DirectXTex\DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -114,6 +115,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>third_party\DirectXTex\DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,6 +140,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>third_party\DirectXTex\DirectXTex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -145,7 +148,7 @@
       <EnableUAC>false</EnableUAC>
       <ModuleDefinitionFile>proxy.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)xinput1_4$(TargetExt)</OutputFile>
-      <AdditionalDependencies>Mfplat.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Mfplat.lib;mfuuid.lib;d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(TargetDir)xinput1_4.dll" "C:\Program Files (x86)\Steam\steamapps\common\NieRAutomata\xinput1_4.dll"
@@ -174,7 +177,7 @@ copy /Y "$(TargetDir)xinput1_4.dll" "C:\Program Files (x86)\Steam\steamapps\comm
       <ModuleDefinitionFile>proxy.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)xinput1_4$(TargetExt)</OutputFile>
       <AdditionalOptions>/PDBALTPATH:%_PDB% %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>Mfplat.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Mfplat.lib;mfuuid.lib;d3d11.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(TargetDir)xinput1_4.dll" "C:\Program Files (x86)\Steam\steamapps\common\NieRAutomata\xinput1_4.dll"
@@ -183,6 +186,7 @@ copy /Y "$(TargetDir)xinput1_4.dll" "C:\Program Files (x86)\Steam\steamapps\comm
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CriUSM.h" />
+    <ClInclude Include="TextureInjection.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SDK.h" />
@@ -196,6 +200,12 @@ copy /Y "$(TargetDir)xinput1_4.dll" "C:\Program Files (x86)\Steam\steamapps\comm
     <ClInclude Include="third_party\MinHook\MinHook.h" />
     <ClInclude Include="third_party\MinHook\trampoline.h" />
     <ClInclude Include="third_party\sjis_table.h" />
+    <ClInclude Include="third_party\DirectXTex\DirectXTex\DirectXTex.h" />
+    <ClInclude Include="third_party\DirectXTex\DirectXTex\DirectXTexP.h" />
+    <ClInclude Include="third_party\DirectXTex\DirectXTex\DDS.h" />
+    <ClInclude Include="third_party\DirectXTex\DirectXTex\BC.h" />
+    <ClInclude Include="third_party\DirectXTex\DirectXTex\filters.h" />
+    <ClInclude Include="third_party\DirectXTex\DirectXTex\scoped.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AOFixes.cpp" />
@@ -225,6 +235,26 @@ copy /Y "$(TargetDir)xinput1_4.dll" "C:\Program Files (x86)\Steam\steamapps\comm
     <ClCompile Include="third_party\MinHook\trampoline.c">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="third_party\DirectXTex\DirectXTex\DirectXTexImage.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="third_party\DirectXTex\DirectXTex\DirectXTexUtil.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="third_party\DirectXTex\DirectXTex\DirectXTexDDS.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="third_party\DirectXTex\DirectXTex\DirectXTexD3D11.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="third_party\DirectXTex\DirectXTex\DirectXTexMisc.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="third_party\DirectXTex\DirectXTex\DirectXTexConvert.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FileLimits.cpp" />
+    <ClCompile Include="TextureInjection.cpp" />
     <ClCompile Include="Translate.cpp" />
     <ClCompile Include="Translate_FlagDescs.cpp" />
     <ClCompile Include="Utility.cpp" />

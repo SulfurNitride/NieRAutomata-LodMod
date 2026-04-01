@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+build/
+build2/
+.xwin-cache/
+NieRAutomata.exe
+d3d11.dll

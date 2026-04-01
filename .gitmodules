@@ -1,0 +1,3 @@
+[submodule "Automata-LodMod/third_party/DirectXTex"]
+	path = Automata-LodMod/third_party/DirectXTex
+	url = https://github.com/microsoft/DirectXTex.git

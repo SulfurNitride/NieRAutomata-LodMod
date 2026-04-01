@@ -6,6 +6,7 @@
 #include <Shlobj.h>
 
 #include <cstdint>
+#include <cmath>
 #include <vector>
 #include <string>
 #include <sstream>
@@ -15,10 +16,8 @@
 #include <algorithm>
 #include <locale>
 #include <codecvt>
-#ifdef _DEBUG
 #include <mutex>
 #include <thread>
-#endif
 
 #include "third_party/MinHook/MinHook.h"
 
@@ -102,6 +101,12 @@ extern WCHAR IniPath[4096];
 
 // CriH264.cpp
 void CriH264_Init();
+
+// TextureInjection.cpp
+void TextureInjection_Init();
+
+// FileLimits.cpp
+void FileLimits_Init();
 
 // MapMod.cpp
 extern bool g11420IsLoaded;

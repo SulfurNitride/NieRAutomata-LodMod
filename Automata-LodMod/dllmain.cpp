@@ -394,6 +394,8 @@ void LodMod_Init()
   Rebug_Init();
   MapMod_Init();
   Translate_Init();
+  TextureInjection_Init();
+  FileLimits_Init();
 
   MH_EnableHook(MH_ALL_HOOKS);
 
